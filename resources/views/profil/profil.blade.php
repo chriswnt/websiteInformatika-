@@ -13,8 +13,8 @@
       @include('layout.sidebar')
 
       <div id="content">
-        <h1>Pendidikan</h1>
-        <p>Ini adalah halaman Pendidikan Prodi Informatika Universitas Matana.</p>
+        <h1>PROFIL</h1>
+        <p>Ini adalah halaman Profil Prodi Informatika Universitas Matana.</p>
 
         <h2>Visi</h2>
         <p>

@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 Route::get('/search', function (Request $request) {
     return 'You searched: ' . e($request->q);
 });
+Route::view('/lain-lain', 'lain_lain.lain_lain')->name('lainlain');

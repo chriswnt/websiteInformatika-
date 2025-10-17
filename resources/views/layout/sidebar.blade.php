@@ -1,36 +1,21 @@
 <div class="sidebar">
-  <!-- BERITA TERBARU -->
-  <h1>Berita Terbaru</h1>
+  <h3>Berita Terbaru</h3>
 
-  <h2>New Website Launched</h2>
-  <h3>January 1st, 2010</h3>
+  <h4>Bangga jadi bagian garuda</h4>
   <p>
-    2010 sees the redesign of our website. Take a look around and let us know what you think.
-    <br /><a href="#">Read more</a>
+   olimpiade matematika yang diselengarakan dalam lingkup nasional berhasil di raih sang garuda.<br>
+    <a href=https://www.kompas.com/tag/olimpiade-matematika" target="_blank">Tag: Olimpiade Matematika>Baca selengkapnya</a>
   </p>
 
-  <h2>New Website Launched</h2>
-  <h3>January 1st, 2010</h3>
+  <h4>semuanya ikut bangga</h4>
   <p>
-    2010 sees the redesign of our website. Take a look around and let us know what you think.
-    <br /><a href="#">Read more</a>
+   siswa berprestasi bikin negara dikenal di kancah internasional.<br>
+    <a href="https://www.kompas.com/edu/read/2025/07/23/125414571/siswa-sma-indonesia-raih-4-medali-perunggu-di-olimpiade-matematika" target="_blank">Siswa SMA Indonesia Raih 4 Medali">Baca selengkapnya</a>
   </p>
 
-  <!-- LINK BERGUNA -->
-  <h1>Useful Links</h1>
-  <ul>
-    <li><a href="#">link 1</a></li>
-    <li><a href="#">link 2</a></li>
-    <li><a href="#">link 3</a></li>
-    <li><a href="#">link 4</a></li>
-  </ul>
-
-  <!-- PENCARIAN -->
-  <h1>Search</h1>
-  <form id="search" method="get" action="{{ url('/search') }}">
-    <p>
-      <input class="search" type="text" name="q" placeholder="enter keywords..." />
-      <input class="submit" type="submit" value="Search" />
-    </p>
-  </form>
+  <h4>siswa berprestasi terus beregenerasi </h4>
+  <p>
+    era baru sudah di mulai lewat revolusioner pendidikan di indonesia.<br>
+    <a href="https://www.kompas.id/label/olimpiade-nasional-matematika" target="_blank">Label: Olimpiade Nasional Matematika.">Baca selengkapnya</a>
+  </p>
 </div>

@@ -16,3 +16,8 @@ Route::get('/search', function (Request $request) {
     return 'You searched: ' . e($request->q);
 });
 Route::view('/lain-lain', 'lain_lain.lain_lain')->name('lainlain');
+//admin
+Route::get('/admin', function () {
+    return view('admin.mahasiswa.index');
+    
+});

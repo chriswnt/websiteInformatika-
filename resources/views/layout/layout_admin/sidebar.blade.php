@@ -9,7 +9,7 @@
           >
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="sidebarMenuLabel">
-                Company name
+                Website Informatika
               </h5>
               <button
                 type="button"
@@ -27,7 +27,7 @@
                   <a
                     class="nav-link d-flex align-items-center gap-2 active"
                     aria-current="page"
-                    href="#"
+                    href="{{url('/admin')}}"
                   >
                     <svg class="bi" aria-hidden="true">
                       <use xlink:href="#house-fill"></use>
@@ -40,15 +40,15 @@
                     <svg class="bi" aria-hidden="true">
                       <use xlink:href="#file-earmark"></use>
                     </svg>
-                    mahasiswa
+                    Mahasiswa
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                  <a class="nav-link d-flex align-items-center gap-2" href="{{url('/pegawai') }}">
                     <svg class="bi" aria-hidden="true">
                       <use xlink:href="#cart"></use>
                     </svg>
-                    Products
+                    Pegawai
                   </a>
                 </li>
               <hr class="my-3" />
@@ -71,5 +71,5 @@
                 </li>
               </ul>
             </div>
-          </div>
         </div>
+    </div>

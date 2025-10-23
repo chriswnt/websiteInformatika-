@@ -1,6 +1,7 @@
 @extends('layout.layout_admin.layout_1')
 @section('content')
-      @include('layout.layout_admin.sidebar')
+
+
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <!-- content -->
           <div

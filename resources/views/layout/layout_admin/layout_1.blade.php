@@ -9,7 +9,7 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Astro v5.13.2" />
-    <title>Dashboard website informatika </title>
+    <title> Dashboard website informatika </title>
     
     <script src="{{asset('assets_bootstrap/js/color-modes.js')}}"></script>
     <link href="{{asset('assets_bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet" />
@@ -206,6 +206,8 @@
       <!-- end -->
     <div class="container-fluid">
       <div class="row">
+        @include('layout.layout_admin.sidebar')
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       @yield('content')
         </main>
       </div>

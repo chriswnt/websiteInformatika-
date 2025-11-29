@@ -3,84 +3,83 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
     // index view
     public function index()
     {
-        // ambil db table pegawai
-        // select * from pegawai
-
-        $pegawai = DB::table('pegawai')-> get();
-        return view('admin.pegawai.index',['pegawai'=> $pegawai]);
+        $pegawai = DB::table('pegawai')->get();
+        return view('admin.pegawai.index', ['pegawai' => $pegawai]);
     }
 
-    // add // tambah
-    public function tambah(){
-        // memanggil tambah
+    // form tambah
+    public function tambah()
+    {
         return view('admin.pegawai.tambah');
     }
 
-    // simpan
-    public function store(Request $request){
-        // insert data 
-        DB::table('pegawai')->insert(
-            [
-            'pegawai_nama'=> $request->Nama,
-            'pegawai_jabatan'=>$request->Jabatan,
-            'pegawai_umur'=>$request->Umur,
-            'pegawai_alamat'=>$request->Alamat
-            ]
-            );
-    
-    //alihkan
-    return redirect('/pegawai');}
+    // simpan data baru
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama'   => 'required|string|max:255',
+            'jabatan'=> 'required|string|max:255',
+            'umur'   => 'required|integer|min:18',
+            'alamat' => 'required|string|max:255',
+            'photo'  => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
 
-
-    // form edit 
-public function edit ($id){
-    //ambil data dari sql tabel pegawai
-    //select * from pegawai where id
-    $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->first();
-    //view--> form
-    return view ('admin.pegawai.edit',['pegawai'=> $pegawai]);
-}
-    // update
-    public function update(Request $request, $id){
-
-//validasi data
-$request->validate([
-    'Nama'=>'required|string|max:255',
-    'Jabatan'=>'required|string|max:255',
-    'Umur'=>'required|integer|min:18',
-    'Alamat'=>'required|string|max:255'
-
-    ]);
-    // update data
-    //sql "update from where id
-    DB::table('pegawai')->where('pegawai_id',$id)->update(
-        [
-            'pegawai_nama'=> $request->Nama,
-             'pegawai_jabatan'=> $request->Jabatan,
-              'pegawai_umur'=> $request->Umur,
-               'pegawai_alamat'=> $request->Alamat,
-            
-        ]
-        );
-
-     // redicted halaman utama
-        return redirect('/pegawai')->with('success', 'Data pegawai berhasil dihapus');
+        $photoPath = null;
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('foto_pegawai', 'public');
         }
 
+        DB::table('pegawai')->insert([
+            'pegawai_nama'   => $request->nama,
+            'pegawai_jabatan'=> $request->jabatan,
+            'pegawai_umur'   => $request->umur,
+            'pegawai_alamat' => $request->alamat,
+            'photo'          => $photoPath,
+        ]);
 
-    //hapus
-    public function hapus($id){
-        //sql hapus
-        DB::table('pegawai')->where('pegawai_id',$id)->delete();
-
-        //redicted halaman utama
-        return redirect('/pegawai')->with('success', 'Data pegawai berhasil dihapus');
+        return redirect('/pegawai')->with('success', 'Data pegawai berhasil ditambahkan');
     }
+
+    // form edit
+    public function edit($id)
+    {
+        $pegawai = DB::table('pegawai')->where('pegawai_id', $id)->first();
+        return view('admin.pegawai.edit', ['pegawai' => $pegawai]);
+    }
+
+    // update data
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama'   => 'required|string|max:255',
+            'jabatan'=> 'required|string|max:255',
+            'umur'   => 'required|integer|min:18',
+            'alamat' => 'required|string|max:255',
+            'photo'  => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        $data = [
+            'pegawai_nama'   => $request->nama,
+            'pegawai_jabatan'=> $request->jabatan,
+            'pegawai_umur'   => $request->umur,
+            'pegawai_alamat' => $request->alamat,
+        ];
+
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $request->file('photo')->store('foto_pegawai', 'public');
+        }
+
+        DB::table('pegawai')->where('pegawai_id', $id)->update($data);
+
+        return redirect('/pegawai')->with('success', 'Data pegawai berhasil diupdate');
+    }
+
+    // hapus & pencarian tetap seperti punyamu tadi...
 }

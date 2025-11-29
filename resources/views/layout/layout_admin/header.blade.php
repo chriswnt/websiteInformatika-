@@ -1,50 +1,42 @@
-<header
-      class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow"
-      data-bs-theme="dark"
-    >
-      <a
-        class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white"
-        href="#"
-        >Prodi Informatika</a
-      >
-      <ul class="navbar-nav flex-row d-md-none">
-        <li class="nav-item text-nowrap">
-          <button
-            class="nav-link px-3 text-white"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSearch"
-            aria-controls="navbarSearch"
-            aria-expanded="false"
-            aria-label="Toggle search"
-          >
-            <svg class="bi" aria-hidden="true">
-              <use xlink:href="#search"></use>
-            </svg>
-          </button>
-        </li>
-        <li class="nav-item text-nowrap">
-          <button
-            class="nav-link px-3 text-white"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#sidebarMenu"
-            aria-controls="sidebarMenu"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <svg class="bi" aria-hidden="true">
-              <use xlink:href="#list"></use>
-            </svg>
-          </button>
-        </li>
-      </ul>
-      <div id="navbarSearch" class="navbar-search w-100 collapse">
-        <input
-          class="form-control w-100 rounded-0 border-0"
-          type="text"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </div>
-    </header>
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="house-fill" viewBox="0 0 16 16">
+    <path
+      d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+    ></path>
+    <path
+      d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+    ></path>
+  </symbol>
+
+  <symbol id="file-earmark" viewBox="0 0 16 16">
+    <path
+      d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"
+    ></path>
+  </symbol>
+
+  <symbol id="cart" viewBox="0 0 16 16">
+    <path
+      d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+    ></path>
+  </symbol>
+
+  {{-- ikon upload untuk menu Upload File --}}
+  <symbol id="upload" viewBox="0 0 16 16">
+    <path
+      d="M.5 9.9a.5.5 0 0 1 .5-.5h4V2.6L3.3 4.3a.5.5 0 1 1-.7-.7L6.1.1a.5.5 0 0 1 .7 0l3.5 3.5a.5.5 0 1 1-.7.7L9 2.6v6.8h4a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"
+    ></path>
+  </symbol>
+
+  <symbol id="gear-wide-connected" viewBox="0 0 16 16">
+    <path
+      d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM4.605 3a.5.5 0 0 0-.498.55l.001.007.29 3.4A.5.5 0 0 1 3.9 7.5h-.782c-.696 0-1.182-.497-1.469-.872a.459.459 0 0 0-.118-.115.112.112 0 0 0-.025-.012L1.5 6.5h-.003a.213.213 0 0 0-.064.039.86.86 0 0 0-.193.27C1.1 7.09 1 7.51 1 8c0 .491.1.912.24 1.19.07.14.14.225.194.271a.213.213 0 0 0 .063.039H1.5l.006-.001a.112.112 0 0 0 .025-.012.459.459 0 0 0 .118-.115c.287-.375.773-.872 1.469-.872H3.9a.5.5 0 0 1 .498.542l-.29 3.408a.5.5 0 0 0 .497.55h1.878z"
+    ></path>
+  </symbol>
+
+  <symbol id="door-closed" viewBox="0 0 16 16">
+    <path
+      d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"
+    ></path>
+    <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"></path>
+  </symbol>
+</svg>

@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController; 
 
 Route::get('/', fn () => redirect()->route('beranda'));
 
@@ -65,3 +66,4 @@ Route::post('/file', [FileController::class, 'store'])->name('file.store');
 Route::get('/file/{id}/edit', [FileController::class, 'edit'])->name('file.edit');
 Route::put('/file/{id}', [FileController::class, 'update'])->name('file.update');
 Route::delete('/file/{id}', [FileController::class, 'destroy'])->name('file.destroy');
+Route::resource('products', ProductController::class);
